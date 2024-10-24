@@ -27,15 +27,15 @@
     font-size: 1.1rem;
   }
 
-  .tax-info{
-    display:none;
+  .tax-info {
+    display: none;
   }
 
-  .tax-toggle{
+  .tax-toggle {
     border: 1px solid black;
-    border-radius:1rem ;
+    border-radius: 1rem;
     height: 3.5rem;
-    padding:1rem ;
+    padding: 1rem;
   }
 </style>
 <div id="filters">
@@ -119,15 +119,15 @@
 <!-- </body> -->
 
 <script>
-  let taxSwitch=document.getElementById("flexSwitchCheckDefault");
-  taxSwitch.addEventListener("click",()=>{
-  let taxInfo=document.getElementsByClassName("tax-info");  
-  for(info of taxInfo){
-    if(info.style.display!="inline"){
-      info.style.display="inline";
-    }else{
-      info.style.display="none";
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for (info of taxInfo) {
+      if (info.style.display != "inline") {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
     }
-  }
   });
 </script>
