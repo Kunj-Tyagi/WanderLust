@@ -32,6 +32,11 @@ body{
     background-color: rgb(252, 250, 250);
 }
 
+.logo{
+    height: 2.2rem;
+    width: 3.5rem;
+}
+
 /* Footer */
 /* to remove underlines */
 .f-info-links a{
