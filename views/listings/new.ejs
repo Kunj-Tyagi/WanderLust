@@ -32,12 +32,34 @@
                 <input name="listing[country]" id="country" placeholder="India" type="text" class="form-control" required/>
                 <div class="invalid-feedback">Please enter the country.</div>
              </div>
-         </div>
-         <div class="mb-3">
+         </div> 
+         <div class="row">
+         <div class="mb-3 col-md-4">
             <label for="location" class="form-label">Location</label>
             <input name="listing[location]" id="location" placeholder="Jaipur,Rajasthan" type="text" class="form-control" required/>
             <div class="invalid-feedback">Please enter the location.</div>
          </div>
+         <div class="col-md-8">
+            <label for="validationCustom04" for="category" class="form-label">Category</label>
+            <select name="listing[category]" class="form-select" id="validationCustom04" required>
+              <option selected disabled value="">Choose</option>
+              <option>Trending</option>
+              <option>Rooms</option>
+              <option>Iconic Cities</option>
+              <option>Mountains</option>
+              <option>Castles</option>
+              <option>Amazing Pools</option>
+              <option>Camping</option>
+              <option>Farms</option>
+              <option>Arctic</option>
+              <option>Domes</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid state.
+            </div>
+          </div>
+         </div>
+
         <button class="btn btn-dark add-btn mt-3">Add</button>
         <br><br>
     </form>
