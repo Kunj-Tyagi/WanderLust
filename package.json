@@ -1,6 +1,6 @@
 {
-  "engines":{
-    "node":"20.17.0"
+  "engines": {
+    "node": "20.17.0"
   },
   "name": "wanderlust",
   "version": "1.0.0",
@@ -17,7 +17,7 @@
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.1.0",
     "cookie-parser": "^1.4.6",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^4.19.2",

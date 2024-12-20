@@ -4,10 +4,11 @@
 
 <style>
   .search-btn {
+    
     background-color: #fe424d;
     color: #fff;
     border-radius: 25px;
-    padding: 0 1rem 0 1rem;
+    padding: 0 0.5rem 0 0.5rem;
   }
   .search-btn:hover {
     background-color: #fe424d;
@@ -18,8 +19,16 @@
     margin-right: 0.5rem;
   }
   .search-inp {
+    /* margin-top: 5px; */
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
+  }
+  .navbar-collapse {
+    transition: background-color 0s ease-in-out;
+  }
+  .navbar-collapse.show {
+    /* margin-top: 10px; */
+    background-color: white
   }
 </style>
 
@@ -29,7 +38,7 @@
       <img src="/Nav_Logo.png" alt="Bootstrap" class="logo" />
     </a>
     <button
-      class="navbar-toggler"
+    class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavAltMarkup"
@@ -37,27 +46,27 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      <div class="navbar-nav d-none d-md-block">
         <a class="nav-link" href="/listings">Explore</a>
       </div>
       <div class="navbar-nav ms-auto">
         <form
-          class="d-flex"
-          role="search"
-          method="GET"
-          action="/listings/search"
+        class="d-flex"
+        role="search"
+        method="GET"
+        action="/listings/search"
         >
-          <input
-            class="form-control me-2 search-inp"
-            type="search"
-            name="q"
-            placeholder="Search destinations"
-          />
-          <button class="btn search-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>Search
-          </button>
-        </form>
-      </div>
+        <input
+        class="form-control me-2 search-inp"
+        type="search"
+        name="q"
+        placeholder="Search destinations"
+        />
+        <button class="btn search-btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>Search
+        </button>
+      </form>
+    </div>
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">List Your Space</a>
         <% if(!currUser){ %>

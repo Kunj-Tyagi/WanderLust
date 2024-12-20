@@ -5,10 +5,22 @@
         <button>Create New Listing</button>
     </form> -->
 <style>
+  #filters-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
   #filters {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling for arrows */
+    width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   .filter {
@@ -16,16 +28,18 @@
     margin-right: 1rem;
     margin-top: 1.6rem;
     opacity: 0.7;
+    flex: 0 0 auto;
   }
 
   #filters a {
-    text-decoration: none; /* Removes the underline */
-    color: black; /* Changes the color to black */
+    text-decoration: none;
+    color: black;
   }
 
   #filters a:hover {
-    color: darkgray; /* Optional: Change color on hover */
+    color: darkgray;
   }
+
   .filter:hover {
     opacity: 1;
     cursor: pointer;
@@ -33,6 +47,39 @@
 
   .filter p {
     font-size: 1.1rem;
+  }
+
+  .scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-arrow i {
+    font-size: 1.2rem;
+  }
+
+  .scroll-left {
+    left: 0.5rem;
+  }
+
+  .scroll-right {
+    right: 0.5rem;
   }
 
   .tax-info {
@@ -46,84 +93,109 @@
     padding: 1rem;
   }
 </style>
-<div id="filters">
-  <a href="/listings/filter/Trending">
-    <div class="filter">
-      <div><i class="fa-solid fa-fire"></i></div>
-      <p>Trending</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Rooms">
-    <div class="filter">
-      <div><i class="fa-solid fa-bed"></i></div>
-      <p>Rooms</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Iconic Cities">
-    <div class="filter">
-      <div><i class="fa-solid fa-mountain-city"></i></div>
-      <p>Iconic Cities</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Mountains">
-    <div class="filter">
-      <div><i class="fa-solid fa-mountain"></i></div>
-      <p>Mountains</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Castles">
-    <div class="filter">
-      <div><i class="fa-brands fa-fort-awesome"></i></div>
-      <p>Castles</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Amazing Pools">
-    <div class="filter">
-      <div><i class="fa-solid fa-person-swimming"></i></div>
-      <p>Amazing Pools</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Camping">
-    <div class="filter">
-      <div><i class="fa-solid fa-campground"></i></div>
-      <p>Camping</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Farms">
-    <div class="filter">
-      <div><i class="fa-solid fa-cow"></i></div>
-      <p>Farms</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Arctic">
-    <div class="filter">
-      <div><i class="fa-solid fa-snowflake"></i></div>
-      <p>Arctic</p>
-    </div>
-  </a>
-  <a href="/listings/filter/Domes">
-    <div class="filter">
-      <div><i class="fa-solid fa-igloo"></i></div>
-      <p>Domes</p>
-    </div>
-  </a>
-  <div class="tax-toggle">
-    <div class="form-check-reverse form-switch">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        role="switch"
-        id="flexSwitchCheckDefault"
-      />
-      <label class="form-check-label" for="flexSwitchCheckDefault"
-        >Display Total after taxes</label
-      >
+
+<div id="filters-wrapper">
+  <!-- Left Scroll Arrow -->
+  <button
+    class="scroll-arrow scroll-left d-md-block d-lg-none"
+    id="scroll-left-btn"
+  >
+    <i class="fa fa-chevron-left"></i>
+  </button>
+
+  <!-- Filters Section -->
+  <div id="filters">
+    <a href="/listings/filter/Trending">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Rooms">
+      <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Iconic Cities">
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic Cities</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Mountains">
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountains</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Castles">
+      <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Castles</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Amazing Pools">
+      <div class="filter">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Amazing Pools</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Camping">
+      <div class="filter">
+        <div><i class="fa-solid fa-campground"></i></div>
+        <p>Camping</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Farms">
+      <div class="filter">
+        <div><i class="fa-solid fa-cow"></i></div>
+        <p>Farms</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Arctic">
+      <div class="filter">
+        <div><i class="fa-solid fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Domes">
+      <div class="filter">
+        <div><i class="fa-solid fa-igloo"></i></div>
+        <p>Domes</p>
+      </div>
+    </a>
+    <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+        <label
+          class="form-check-label text-center text-md-left"
+          for="flexSwitchCheckDefault"
+        >
+          <span class="d-none d-md-inline">Total after taxes</span>
+          <span class="d-inline d-md-none">Taxes</span>
+        </label>
+      </div>
     </div>
   </div>
+
+  <!-- Right Scroll Arrow -->
+  <button
+    class="scroll-arrow scroll-right d-md-block d-lg-none"
+    id="scroll-right-btn"
+  >
+    <i class="fa fa-chevron-right"></i>
+  </button>
 </div>
+
 <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-3">
-  <%for(let listing of allListings){ %>
-  <a href="/listings/<%=listing._id%>" class="listing-link">
+  <% for (let listing of allListings) { %>
+  <a href="/listings/<%= listing._id %>" class="listing-link">
     <div class="card col listing-card">
       <img
         src="<%= listing.image.url %>"
@@ -131,31 +203,42 @@
         alt="listing_image"
         style="height: 20rem"
       />
-      <!-- image ka uppar kuch bhi karne ka liya card-img-overlay -->
       <div class="card-img-overlay"></div>
       <div class="card-body">
         <p class="card-text">
-          <b><%=listing.title%></b><br />
-          &#8377;<%=listing.price.toLocaleString("en-IN")%> / night
+          <b><%= listing.title %></b><br />
+          &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
           <i class="tax-info"> &nbsp; &nbsp;+18 GST</i>
         </p>
       </div>
     </div>
   </a>
-  <%}%>
+  <% } %>
 </div>
-<!-- </body> -->
 
 <script>
+  // Scroll left button functionality
+  document.getElementById("scroll-left-btn").addEventListener("click", () => {
+    document.getElementById("filters").scrollBy({
+      left: -200, // Adjust the scroll distance
+      behavior: "smooth",
+    });
+  });
+
+  // Scroll right button functionality
+  document.getElementById("scroll-right-btn").addEventListener("click", () => {
+    document.getElementById("filters").scrollBy({
+      left: 200, // Adjust the scroll distance
+      behavior: "smooth",
+    });
+  });
+
+  // Toggle tax info
   let taxSwitch = document.getElementById("flexSwitchCheckDefault");
   taxSwitch.addEventListener("click", () => {
     let taxInfo = document.getElementsByClassName("tax-info");
-    for (info of taxInfo) {
-      if (info.style.display != "inline") {
-        info.style.display = "inline";
-      } else {
-        info.style.display = "none";
-      }
+    for (let info of taxInfo) {
+      info.style.display = info.style.display === "none" ? "inline" : "none";
     }
   });
 </script>
