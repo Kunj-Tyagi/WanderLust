@@ -15,13 +15,13 @@ To install and run this project locally, follow these steps:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/Omdeep-Tyagi/WanderWorld.git
+    git clone https://github.com/Kunj-Tyagi/WanderLust.git
     ```
 
 2. Navigate to the project directory:
 
     ```sh
-    cd WanderWorld
+    cd WanderLust
     ```
 
 3. Install the dependencies:
