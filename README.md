@@ -1,6 +1,6 @@
-# WanderWorld
+# WanderLust
 
-WanderWorld is a project designed to help users explore and discover new destinations. It provides a platform for users to sign up, log in, and explore various listings of travel destinations.
+WanderLust is a project designed to help users explore and discover new destinations. It provides a platform for users to sign up, log in, and explore various listings of travel destinations.
 
 ## Features
 
