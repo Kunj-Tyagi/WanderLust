@@ -85,7 +85,7 @@ For any inquiries or questions, please contact:
 PORT=3000
 
 # MongoDB connection URI
-ATLASDB_URL=mongodb://localhost:27017/wanderworld
+ATLASDB_URL=mongodb://localhost:27017/wanderlust
 
 # Session secret for express-session
 SECRET_CODE=your_secret_code
