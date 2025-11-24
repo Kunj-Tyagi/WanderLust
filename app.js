@@ -77,8 +77,16 @@ main()
   });
 
 // for connection between node and mongodb!
+// async function main() {
+//   await mongoose.connect(MONGOATLAS_URL);
+// }
 async function main() {
-  await mongoose.connect(MONGOATLAS_URL);
+  await mongoose.connect(MONGOATLAS_URL, {
+    tls: true,                         // Force TLS
+    minVersion: "TLSv1.2",             // Avoid TLSv1 error
+    tlsAllowInvalidCertificates: false // Use true only if debugging self-signed certs
+  });
+  console.log("Connected to DB!");
 }
 
 app.use((req, res, next) => {
