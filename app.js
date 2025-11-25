@@ -87,8 +87,8 @@ async function main() {
 //     tlsAllowInvalidCertificates: false
 //   });
 
-  console.log("Connected to DB!");
-}
+//   console.log("Connected to DB!");
+// }
 // async function main() {
 //   await mongoose.connect(MONGOATLAS_URL, {
 //     tls: true,                         // Force TLS
