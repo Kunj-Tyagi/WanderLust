@@ -4,7 +4,7 @@ const initData=require("./data.js");
 const Listing=require("../models/listing.js");
 
 // Database name-Wanderlust:)
-const MONGO_URL="mongodb+srv://kunjtyagi045_db_user:RJEJkdaSslnMdFd6@cluster0.g5fh8lg.mongodb.net/Wanderlust1?appName=Cluster0";
+const MONGO_URL="mongodb+srv://kunjtyagi045:MiD6maUJ2svftPJ8@cluster0.5kdg5.mongodb.net/?appName=Cluster0";
 
 // main function ko call karna ka liya
 main().then(()=>{
